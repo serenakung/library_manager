@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Library</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Load the html5-qrcode library from a CDN.  This script provides
+         barcode scanning using the device’s camera.  In offline
+         environments the script will not load but the rest of the
+         interface still works. -->
+    <!-- Use a known stable version of the html5-qrcode library.  Version 2.3.9 is not
+         published under the base package name and therefore fails to load from unpkg.
+         Version 2.3.8 is the latest official release at time of writing【29012801668785†L0-L8】. -->
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Personal Library Manager</h1>
+    </header>
+
+    <main>
+        <section class="add-book">
+            <h2>Add a Book</h2>
+            <!-- Error message container.  Populated by JavaScript when scanning fails
+                 due to offline status, missing library or camera permission denial. -->
+            <div id="error-message" class="error-message" style="display: none;"></div>
+            <div id="scanner-container" class="scanner-container" style="display: none;">
+                <div id="scanner" class="scanner"></div>
+                <button id="stop-scan" class="stop-scan">Stop scanning</button>
+            </div>
+            <button id="start-scan" class="start-scan">Scan barcode</button>
+            <form id="add-form" action="{{ url_for('add_book') }}" method="post" autocomplete="off">
+                <label>
+                    ISBN:
+                    <input type="text" name="isbn" id="isbn" placeholder="e.g. 9780140328721" required>
+                </label>
+                <label>
+                    <input type="checkbox" name="gift" id="gift"> Gift?
+                </label>
+                <!-- Show the gift giver field only when the book is marked as a gift.  The
+                     ``gift-from-group`` is hidden by default and toggled via JS. -->
+                <label id="gift-from-group" style="display: none;">
+                    Gifted by:
+                    <input type="text" name="gift_from" id="gift_from" placeholder="From whom?">
+                </label>
+                <label>
+                    Title (optional if fetched automatically):
+                    <input type="text" name="title" placeholder="Book title">
+                </label>
+                <label>
+                    Authors (comma separated):
+                    <input type="text" name="authors" placeholder="Author names">
+                </label>
+                <label>
+                    Tags (comma separated):
+                    <input type="text" name="tags" placeholder="e.g. Fantasy, Board book">
+                </label>
+                <button type="submit">Add book</button>
+            </form>
+        </section>
+
+        <section class="book-list">
+            <h2>Your Collection</h2>
+            <div class="export-controls" style="margin-bottom: 0.5rem;">
+                <button id="export-csv">Download CSV</button>
+                <button id="export-json">Download JSON</button>
+                <button id="export-pdf">Download PDF</button>
+            </div>
+            {% if books %}
+            <!-- Search box to filter by title, authors or tags.  Typing in this box filters
+                 the rows below in real time.  A separate checkbox controls whether to
+                 display only live books or the entire collection.  By default only
+                 live books are shown. -->
+            <div class="search-wrapper">
+                <label>
+                    Search:
+                    <input type="text" id="search-input" placeholder="Search by title, author or tags">
+                </label>
+                <label style="margin-left: 1rem;">
+                    <input type="checkbox" id="live-only" checked> Live only
+                </label>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>ISBN</th>
+                        <th>Total Reads</th>
+                        <th>Reads Today</th>
+                        <th>Authors</th>
+                        <th>Tags</th>
+                        <th>Last Read</th>
+                        <th>Gifted By</th>
+                        <th>Gift?</th>
+                        <th>Live?</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for book in books %}
+                    <tr data-id="{{ book.id }}"
+                        data-isbn="{{ book.isbn }}"
+                        data-gift-from="{{ book.gift_from|default('') }}"
+                        data-title="{{ book.title }}"
+                        data-authors="{{ book.authors }}"
+                        data-tags="{{ ', '.join(book.tags) }}"
+                        data-live="{{ 'true' if book.is_live else 'false' }}">
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.isbn }}</td>
+                        <td>{{ book.read_count or 0 }}</td>
+                        <td>{{ book.reads_today or 0 }}</td>
+                        <td>{{ book.authors }}</td>
+                        <td>{{ ', '.join(book.tags) }}</td>
+                        <td>{{ book.last_read_date }}</td>
+                        <td>{{ book.gift_from }}</td>
+                        <td>
+                            <input type="checkbox" class="gift-toggle" {% if book.is_gift %}checked{% endif %} disabled>
+                        </td>
+                        <td>
+                            <input type="checkbox" class="live-toggle" {% if book.is_live %}checked{% endif %}>
+                        </td>
+                        <td>
+                            <!-- Edit button allows manual editing of book details.  The Mark
+                                 read button remains for updating the last read date. -->
+                            <button class="edit-book">Edit</button>
+                            <button class="mark-read">Mark read today</button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+                <p>No books yet. Add your first book above.</p>
+            {% endif %}
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+    <script>
+        // Export buttons
+        document.addEventListener('DOMContentLoaded', function () {
+            function openExport(format) {
+                var url = '/export';
+                if (format) url += '?format=' + encodeURIComponent(format);
+                // Open in a new tab so downloads behave naturally
+                window.open(url, '_blank');
+            }
+
+            var csvBtn = document.getElementById('export-csv');
+            var jsonBtn = document.getElementById('export-json');
+            var pdfBtn = document.getElementById('export-pdf');
+
+            if (csvBtn) csvBtn.addEventListener('click', function () { openExport('csv'); });
+            if (jsonBtn) jsonBtn.addEventListener('click', function () { openExport('json'); });
+            if (pdfBtn) pdfBtn.addEventListener('click', function () { openExport('pdf'); });
+        });
+    </script>
+</body>
+</html>

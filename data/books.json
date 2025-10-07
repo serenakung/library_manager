@@ -1,0 +1,287 @@
+[
+  {
+    "id": 1,
+    "isbn": "9781509883684",
+    "title": "My First Touch and Find London",
+    "authors": "",
+    "tags": [
+      "London",
+      "Big Flaps",
+      "fiction",
+      "infant",
+      "early years",
+      "sensory books",
+      "travel",
+      "board book"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": true,
+    "gift_from": "Nicola"
+  },
+  {
+    "id": 2,
+    "isbn": "9780723264583",
+    "title": "Spot Goes to the Farm",
+    "authors": "Eric Hill",
+    "tags": [
+      "Children's fiction",
+      "Dogs",
+      "fiction",
+      "Domestic animals",
+      "fiction",
+      "Toy and movable books",
+      "Animals",
+      "infancy",
+      "fiction",
+      "board book"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": true,
+    "gift_from": "Tom"
+  },
+  {
+    "id": 3,
+    "isbn": "9780794532949",
+    "title": "That's Not My Plane...",
+    "authors": "Fiona Watt",
+    "tags": [
+      "sensory books",
+      "board book",
+      "travel"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": true,
+    "gift_from": "Jackie"
+  },
+  {
+    "id": 4,
+    "isbn": "9780670913503",
+    "title": "Hairy Maclary from Donaldson's Dairy",
+    "authors": "Lynley Dodd",
+    "tags": [
+      "Children's fiction",
+      "Dogs",
+      "fiction",
+      "Cats",
+      "fiction",
+      "Bullies",
+      "fiction",
+      "Stories in rhyme",
+      "board book"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-07",
+    "is_gift": true,
+    "gift_from": "Nicola",
+    "read_count": 2,
+    "read_log": {
+      "2025-10-07": 2
+    }
+  },
+  {
+    "id": 5,
+    "isbn": "9780241003008",
+    "title": "The very hungry caterpillar",
+    "authors": "Eric Carle",
+    "tags": [
+      "board book",
+      "early years",
+      "infancy",
+      "life cycle",
+      "bugs"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": true,
+    "gift_from": "Nicola"
+  },
+  {
+    "id": 6,
+    "isbn": "9780141379524",
+    "title": "Each Peach Pear Plum",
+    "authors": "Janet and Allan Ahlberg",
+    "tags": [
+      "Stories in rhyme",
+      "Children's fiction",
+      "Picture books",
+      "board book"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": false,
+    "gift_from": ""
+  },
+  {
+    "id": 7,
+    "isbn": "9781408354407",
+    "title": "Giraffes Can't Dance",
+    "authors": "Giles Andreae, Guy Parker-Rees",
+    "tags": [
+      "confidence",
+      "dance",
+      "animals",
+      "bullies",
+      "stories in rhyme",
+      "board book"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": false,
+    "gift_from": ""
+  },
+  {
+    "id": 8,
+    "isbn": "9781406363074",
+    "title": "We're Going on a Bear Hunt",
+    "authors": "Michael Rosen, Helen Oxenbury",
+    "tags": [
+      "board book",
+      "early years",
+      "stories in rhyme",
+      "adventure"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": false,
+    "gift_from": ""
+  },
+  {
+    "id": 9,
+    "isbn": "9781406365177",
+    "title": "Peck Peck Peck",
+    "authors": "Lucy Cousins",
+    "tags": [
+      "Children's fiction",
+      "Picture books",
+      "Toy and movable books",
+      "board book",
+      "stories in rhyme"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": false,
+    "gift_from": ""
+  },
+  {
+    "id": 10,
+    "isbn": "9781406331264",
+    "title": "Ten little fingers and ten little toes",
+    "authors": "written by Mem Fox;illustrated by Helen Oxenbury",
+    "tags": [
+      "Infants",
+      "Pictorial works",
+      "Juvenile fiction",
+      "Pictorial worksJuvenile fiction",
+      "stories in rhyme",
+      "board book"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": true,
+    "gift_from": "Nicola"
+  },
+  {
+    "id": 11,
+    "isbn": "9781409518990",
+    "title": "Thats Not My Tiger",
+    "authors": "Fiona Watt",
+    "tags": [
+      "sensory books",
+      "board book",
+      "animal",
+      "description"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": true,
+    "gift_from": "Nicola"
+  },
+  {
+    "id": 12,
+    "isbn": "9780746093368",
+    "title": "Thats Not My Monkey",
+    "authors": "Fiona Watt",
+    "tags": [
+      "sensory books",
+      "board book",
+      "animal",
+      "description"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": true,
+    "gift_from": "Jackie"
+  },
+  {
+    "id": 13,
+    "isbn": "9780008195809",
+    "title": "Paddington Little Library",
+    "authors": "Michael Bond",
+    "tags": [
+      "Children's fiction",
+      "Paddington bear (fictitious character)",
+      "fiction",
+      "Picture books",
+      "board book"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": false,
+    "gift_from": ""
+  },
+  {
+    "id": 14,
+    "isbn": "9780241470145",
+    "title": "Peter Rabbit Little Library",
+    "authors": "",
+    "tags": [],
+    "is_live": true,
+    "last_read_date": "2025-10-05",
+    "is_gift": false,
+    "gift_from": ""
+  },
+  {
+    "id": 15,
+    "isbn": "9780671449025",
+    "title": "The Going-To-Bed Book",
+    "authors": "",
+    "tags": [
+      "Fiction",
+      "Humorous Stories",
+      "Children",
+      "Children's Books/Baby-Preschool",
+      "Children: Babies & Toddlers",
+      "Sleep",
+      "Juvenile fiction",
+      "Animals - General",
+      "Bedtime & Dreams",
+      "Juvenile Fiction / General",
+      "Bedtime",
+      "Night"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-07",
+    "is_gift": false,
+    "gift_from": "",
+    "read_count": 1,
+    "read_log": {
+      "2025-10-07": 1
+    }
+  },
+  {
+    "id": 16,
+    "isbn": "9789465055923",
+    "title": "Speedy Wheels F1 Racing Car",
+    "authors": "0",
+    "tags": [
+      "0"
+    ],
+    "is_live": true,
+    "last_read_date": "2025-10-07",
+    "is_gift": false,
+    "gift_from": "board book, sensory book, race cars, formula one, competition, animals"
+  }
+]

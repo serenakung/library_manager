@@ -1,0 +1,116 @@
+/* Basic styling for the personal library app */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background: #3f51b5;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+h2 {
+    margin-top: 2rem;
+}
+
+form label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 4px;
+    background: #3f51b5;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #303f9f;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+table th {
+    background: #f0f0f0;
+}
+
+.scanner-container {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* Styling for the gift search input */
+.search-wrapper {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+.search-wrapper input[type="text"] {
+    max-width: 300px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+#scanner {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.stop-scan {
+    background: #c62828;
+}
+
+.stop-scan:hover {
+    background: #b71c1c;
+}
+
+.start-scan {
+    margin-bottom: 1rem;
+}
+
+/* Error message styling */
+.error-message {
+    color: #b71c1c;
+    background: #ffebee;
+    padding: 0.5rem;
+    border: 1px solid #b71c1c;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
