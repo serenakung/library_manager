@@ -59,12 +59,9 @@ This was my first project using **Python, Flask, and HTML templates**, and it ta
 ---
 
 ## 🧩 Reflection
-I built this app with support from ChatGPT, which helped me write and debug much of the code.  
-I don’t yet understand every part of the codebase in detail, but I’m proud that I was able to guide the process, troubleshoot issues, and get the app working.  
-Each time I revisit it, I understand a little more about how the pieces fit together.
-
-This project was also a major milestone in my journey — the first time I used **Flask and back-end logic** to build something meaningful from scratch.  
-I learned to troubleshoot environment issues, commit confidently with Git, and think through how data moves between user input, Python logic, and the interface.  
+This project gave me my **first hands-on experience** with Flask and building a small app that connects front-end and back-end code.  
+While I didn’t write or fully understand every part of the code on my own, I learned how to guide the process, test ideas, and see how the pieces fit together.  
+It was the first time I could run something locally that actually worked — which made me feel like I was really starting to build things, not just follow tutorials.
 
 Most importantly, I built something that feels personal and useful — a tool that can grow with my family, and a stepping stone toward building more sophisticated, data-driven apps.
 
