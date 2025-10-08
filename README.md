@@ -17,9 +17,7 @@ This was my first project using **Python, Flask, and HTML templates**, and it ta
 
 ## 🧠 What I Learned
 - How to **set up and run a Flask app locally** using Homebrew and Python3.  
-- How to troubleshoot **port conflicts** (moving from port 5000 to 8080).  
-- How to **connect HTML templates** with Flask routes to render dynamic content.  
-- How to **collect metadata** (title, author, ISBN) from both manual input and barcode scans.  
+- How to troubleshoot **port conflicts** (moving from port 5000 to 8080).    
 - How to **git commit and manage changes** properly through Terminal.  
 - How to collaborate with **ChatGPT (vibe-coding)** to iterate and debug efficiently.  
 - How to think about **data flow** between user inputs, Python logic, and the displayed list.
